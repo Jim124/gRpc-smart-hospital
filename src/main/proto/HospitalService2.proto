@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "generated.grpc.hospitalservice2";
+option java_outer_classname = "HospitalService2Impl";
+
+package HospitalService2;
+
+// The service definition.
+// The server that you implement must extend the class  <servicename>ImplBase
+// so in this example you will create a server class that extends ZooService2ImplBase
+
+service HospitalService2 {
+   
+  //for a specific animal get their favourites
+  rpc CurrentTemperature(Animal) returns (Favourite) {}
+
+}
+
+   //  message identifying an animal
+   message Animal {
+     string name = 1;
+     string type = 2;
+     int32 weight = 3;
+   }
+
+   // The response message containing answer from the server
+   message Favourite {
+     string food = 1;
+     string toy = 2;
+     string carer = 3;
+   }
+ 
+   
+
